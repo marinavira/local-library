@@ -37,3 +37,18 @@ The getBorrowersForBook() function intakes book and accounts as paramenters. A v
 
 #public/src/home.js 
 
+The object getBooksByAuthorId is declared as an arrow function with parameters of books and authorId. The function uses the filter() method to check wether the book's author id matches the input author id.
+
+The function getTotalBooksCount intakes the books array as a parameter. The length of the array is retured. 
+
+The function getTotalAccountsCount intakes the accounts array as a parameter. The length of that array is returned. 
+
+The function getBooksBorrowedCount intakes the books array as a parameter. Within the function, a variable called borrowedCount is decalred at zero. An arrow funtion using the forEach() method on the book counter is used along with an if statement to check if each book item's return status is false. If it is false, the the borrowedCount will increase by one. 
+
+
+GetMostCommonGenres intakes the books array as a parameter. Result is declared as an arrow function that uses the reduce() method. The two parameters are the accumulator and the book item. The function includes the variables genre(the book's genre) and genreName which is declared as another arrow function. 
+genreName  uses the find method on the accumulator and intakes element. This function checks if the elements name is genre. 
+An if statement is used to check if not genreName. If it is not the genreName, we will create a new genre and input two key:value pairs, name and count. newGenre is pushed into the accumulator. 
+Otherwise, genreName is incremented by 1. 
+The accumulator is returned.
+The sort() method is used to sort its two intakes, Wt==
