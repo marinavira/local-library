@@ -46,9 +46,19 @@ The function getTotalAccountsCount intakes the accounts array as a parameter. Th
 The function getBooksBorrowedCount intakes the books array as a parameter. Within the function, a variable called borrowedCount is decalred at zero. An arrow funtion using the forEach() method on the book counter is used along with an if statement to check if each book item's return status is false. If it is false, the the borrowedCount will increase by one. 
 
 
-GetMostCommonGenres intakes the books array as a parameter. Result is declared as an arrow function that uses the reduce() method. The two parameters are the accumulator and the book item. The function includes the variables genre(the book's genre) and genreName which is declared as another arrow function. 
-genreName  uses the find method on the accumulator and intakes element. This function checks if the elements name is genre. 
-An if statement is used to check if not genreName. If it is not the genreName, we will create a new genre and input two key:value pairs, name and count. newGenre is pushed into the accumulator. 
-Otherwise, genreName is incremented by 1. 
-The accumulator is returned.
-The sort() method is used to sort its two intakes, Wt==
+GetMostCommonGenres intakes the books array as a parameter. This function returns an array with the most common genres. The list is ordered from most common to least and is split to only return the top five. The new array that is returned will only two keys: the name of the genre and how many occurrences it has. 
+
+GetMostPopularBooks intakes the book array as a parameter. A new array is returned containing the name of the book and the number of times it has been checked out. If the function returns more than five book, the return will retuen only the top five. 
+
+GetMostPopularAuthors intakes two parameters: an array of books and an array of authors. The function works by making a new array with map() which will contain the authors name and an accumulated count of their borrows. The order is changed to start from most popular to least using sort(). That list is then cut at five using splice(). 
+
+
+#public/src/helpers.js 
+
+The following function are used throughout multiple .js files. It is helpful to have them stored in a seperate file to be required on necessary pages. 
+
+The findAccountById() function intakes the accounts array and an id. The find() method is then used on the accounts array to search for an account id that matches an input id.
+
+The findAuthorById() function intakes the authors array and an id. The find() method is then used on the authors array to search for an author id that matches the input id.
+
+The findBookById() function intakes the books array and an id. The find() method is used on the books array to search and return a book with a matching id.
